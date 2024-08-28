@@ -1,5 +1,6 @@
 import pyperclip
 import pyautogui
+import keyboard
 import time
 
 file_path = 'codes.txt'
@@ -13,8 +14,8 @@ def code_paster(file_path, pause_time=5):
             time.sleep(1)  
             pyautogui.hotkey('ctrl', 'v')
             time.sleep(3)
-            pyautogui.press('enter')
-            pyautogui.press('enter')
+            keyboard.press('enter')
+            keyboard.release('enter')
             time.sleep(verify_delay) 
             pyautogui.press('z')
             time.sleep(2)
