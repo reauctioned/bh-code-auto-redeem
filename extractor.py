@@ -2,22 +2,28 @@ import pyperclip
 import pyautogui
 import time
 
-file_path = 'codex.txt'
+file_path = 'codes.txt'
+verify_delay= 6
 
-def code_paster(file_path, pause_time=10):
+def code_paster(file_path, pause_time=5):
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip()
             pyperclip.copy(line)
-            time.sleep(pause_time)
+            time.sleep(1)  
             pyautogui.hotkey('ctrl', 'v')
+            time.sleep(3)
             pyautogui.press('enter')
-            time.sleep(pause_time)
             pyautogui.press('enter')
-            time.sleep(pause_time)
+            time.sleep(verify_delay) 
+            pyautogui.press('z')
+            time.sleep(2)
+            pyautogui.click()  
+            pyautogui.click()  
             pyautogui.hotkey('ctrl', 'a')
             pyautogui.press('backspace')
-            time.sleep(pause_time)
+            time.sleep(2)  
+      
+      
 
-
-code_paster('codes.txt')
+code_paster(file_path)
