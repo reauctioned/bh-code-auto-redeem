@@ -1,1 +1,1 @@
-# bh-code-auto-redeem
+# BrawlHalla-code-auto-redeemer
